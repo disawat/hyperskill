@@ -5,3 +5,4 @@ Share my project from Hyperskill
 - Introduction to Data Science: HR Data Analysis
 - Introduction to Data Science: House Classification
 - Introduction to Data Science: Data Analysis for Hospitals
+- Introduction to Data Science: Salary Prediction
