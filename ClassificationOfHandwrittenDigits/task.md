@@ -28,33 +28,10 @@ We are ready to train our models. In this stage, you need to find the best algor
 
 Objectives:
 1. Import sklearn implementations of the classifiers from the description and the accuracy scorer;
-2. Since you are going to train a lot of models, implementing the following function will make the process fast and convenient:
-
-# the function
-def fit_predict_eval(model, features_train, features_test, target_train, target_test):
-    # here you fit the model
-    # make a prediction
-    # calculate accuracy and save it to score
-    print(f'Model: {model}\nAccuracy: {score}\n')
-
-
-# example
-# code
-fit_predict_eval(
-        model=KNeighborsClassifier(),
-        features_train=x_train,
-        features_test=x_test,
-        target_train=y_train,
-        target_test=y_test
-    )
-# output
-# >>> Model: KNeighborsClassifier()
-# >>> Accuracy: 0.1234
-
-3. Initialize the models with default parameters. Some of the algorithms have randomness, so you need to set random_state=40 to receive reproducible results;
-4. Fit the models;
-5. Make predictions and print the accuracies. Make sure that the program prints the models and their results in the following order: K-nearest Neighbors, Decision Tree, Logistic Regression, and Random Forest;
-6. Which model performs better? Print the answer, including the model's name without parameters, and its accuracy. Round the result to the third decimal place.
+2. Initialize the models with default parameters. Some of the algorithms have randomness, so you need to set random_state=40 to receive reproducible results;
+3. Fit the models;
+4. Make predictions and print the accuracies. Make sure that the program prints the models and their results in the following order: K-nearest Neighbors, Decision Tree, Logistic Regression, and Random Forest;
+5. Which model performs better? Print the answer, including the model's name without parameters, and its accuracy. Round the result to the third decimal place.
 
 ## Stage 4/5: Data preprocessing
 At this stage, we will improve model performance by preprocessing the data. We will see how normalization affects the accuracy. Recall that normalization scales values of features from 0 to 1.
@@ -76,6 +53,7 @@ Objectives:
 2. Initialize GridSearchCV(estimator=..., param_grid=..., scoring='accuracy', n_jobs=-1) to search over the following parameters:
     - For the K-nearest Neighbors classifier: {'n_neighbors': [3, 4], 'weights': ['uniform', 'distance'], 'algorithm': ['auto', 'brute']}
     - For the Random Forest classifier: {'n_estimators': [300, 500], 'max_features': ['sqrt', 'log2'], 'class_weight': ['balanced', 'balanced_subsample']}. Don't forget to set random_state=40 in the Random Forest classifier!
+      
     Note that njobs parameter is responsible for the number of jobs that will be run in parallel. Set njobs=-1 to use all processors;
 3. Run the fit method for GridSearchCV. Use the train set only. Since a number of models (one of two algorithms with a set of parameter values is one model) must be trained to compare the performances, this step will take about 30 minutes;
 4. Print the best sets of parameters for both algorithms. You can get this information in the attribute called best_estimator_ of each algorithm's GridSearchCV instance. Train two best estimators on the test set and print their accuracies.
