@@ -6,3 +6,4 @@ Share my project from Hyperskill
 - Introduction to Data Science: House Classification
 - Introduction to Data Science: Data Analysis for Hospitals
 - Introduction to Data Science: Salary Prediction
+- Introduction to Data Science: Classification of Handwritten Digits
